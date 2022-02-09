@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ExcProp {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  width: 99vw;
+  height: 90vh;
+}
+.textarea {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+  min-width: 10em; 
+  min-height: 1em;
+}
+.textarea[contenteditable]:empty::before {
+  content: "exercise property";
+  color: gray;
+}
+.ExcTable tr {
+  border: solid;
+}
+.ExcTable th {
+  border: solid;
+}
+.ExcTable td {
+  border: solid;
+}
+.ExcPropUI {
+  display: grid;
+  grid-template-areas:
+    "AddTitle Titles Titles"
+    "tableSample tableSample tableSample"
+    "AddRow AddRow AddRow";
+  width: fit-content;
+  float: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Titles {
+  grid-area: Titles;
+  display: flex;
+  flex-direction: row;
+}
+
+.AddTitle {
+  grid-area: AddTitle;
+}
+
+.AddRow {
+  grid-area: AddRow;
+}
+.AddRow button{
+  width: 100%;
+}
+.tableSample {
+  grid-area: tableSample;
+  display: flex;
+  flex-direction: column;
 }
